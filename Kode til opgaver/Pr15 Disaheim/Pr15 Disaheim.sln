@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pr15 Disaheim", "Pr15 Disaheim.csproj", "{D25F2D2F-C79C-4910-828A-BC4EC05634BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Disaheim Test", "..\Disaheim Test\Disaheim Test.csproj", "{51C98E90-E9A1-4EDB-821E-90AA1DFE19C9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D25F2D2F-C79C-4910-828A-BC4EC05634BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D25F2D2F-C79C-4910-828A-BC4EC05634BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D25F2D2F-C79C-4910-828A-BC4EC05634BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D25F2D2F-C79C-4910-828A-BC4EC05634BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{51C98E90-E9A1-4EDB-821E-90AA1DFE19C9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{51C98E90-E9A1-4EDB-821E-90AA1DFE19C9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{51C98E90-E9A1-4EDB-821E-90AA1DFE19C9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{51C98E90-E9A1-4EDB-821E-90AA1DFE19C9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {72257798-91CC-4639-B6ED-7DABF85A9399}
+	EndGlobalSection
+EndGlobal
