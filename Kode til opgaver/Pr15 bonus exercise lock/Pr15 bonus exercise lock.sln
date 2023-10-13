@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34031.279
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pr15 bonus exercise lock", "Pr15 bonus exercise lock.csproj", "{D515A60A-67C1-4BF8-8528-F57A9BD491B2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D515A60A-67C1-4BF8-8528-F57A9BD491B2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D515A60A-67C1-4BF8-8528-F57A9BD491B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D515A60A-67C1-4BF8-8528-F57A9BD491B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D515A60A-67C1-4BF8-8528-F57A9BD491B2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {2FA54712-0813-4163-AD84-4D930CAAA583}
+	EndGlobalSection
+EndGlobal
