@@ -34,5 +34,21 @@ namespace Pr15_Disaheim
             }
             return result;
         }
+        public Double GetValueOfCourse(Course course)   // 875 per started hour.
+        {
+            Double result = 0;
+            int remainder = course.DurationInMinutes % 60;
+
+            if (remainder > 0)
+            {
+                result = (course.DurationInMinutes / 60 + 1) * 875;
+            }
+            else if (remainder == 0)
+            {
+                result = course.DurationInMinutes / 60 * 875;
+            }
+
+            return result;
+        }
     }
 }

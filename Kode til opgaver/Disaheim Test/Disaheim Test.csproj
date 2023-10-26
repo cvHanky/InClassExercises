@@ -19,6 +19,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Pr15 Disaheim\Pr15 Disaheim.csproj" />
+    <ProjectReference Include="..\UtilityLib\UtilityLib.csproj" />
   </ItemGroup>
 
 </Project>

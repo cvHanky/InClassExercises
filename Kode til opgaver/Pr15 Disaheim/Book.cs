@@ -6,14 +6,13 @@ using System.Threading.Tasks;
 
 namespace Pr15_Disaheim
 {
-    public class Book
+    public class Book : Merchandise
     {
-        public string ItemId { get; set; }
         public string Title { get; set; }
         public double Price { get; set; }
         public Book(string itemId, string title, double price)
         {
-            ItemId = itemId;
+            base.ItemId = itemId;
             Title = title;
             Price = price;
         }
@@ -23,7 +22,7 @@ namespace Pr15_Disaheim
         { }
         public override string ToString()
         {
-            return "ItemId: " + ItemId + ", Title: " + Title + ", Price: " + Price;
+            return $"ItemId: {ItemId}, Title: {Title}, Price: {Price}";
         }
     }
 }
