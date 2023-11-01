@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pr15_Disaheim
+namespace Pr15_Disaheim.Objects
 {
-    public enum Level
+    public interface IValuable
     {
-        low, medium, high
+        double GetValue();
     }
 }

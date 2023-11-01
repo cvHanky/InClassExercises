@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pr15_Disaheim
+namespace Pr15_Disaheim.Objects
 {
     public class Book : Merchandise
     {
@@ -12,17 +12,20 @@ namespace Pr15_Disaheim
         public double Price { get; set; }
         public Book(string itemId, string title, double price)
         {
-            base.ItemId = itemId;
+            ItemId = itemId;
             Title = title;
             Price = price;
         }
-        public Book(string itemId, string title) : this(itemId, title, 0)
-        { }
-        public Book(string itemId) : this(itemId, null, 0)
-        { }
+        public Book(string itemId, string title) : this(itemId, title, 0) { }
+        public Book(string itemId) : this(itemId, null, 0) { }
+        public override double GetValue()
+        {
+            return Price;
+        }
         public override string ToString()
         {
             return $"ItemId: {ItemId}, Title: {Title}, Price: {Price}";
         }
+
     }
 }
