@@ -63,11 +63,11 @@ namespace Pr15_Disaheim.Repositories
             foreach (IValuable v in valuables)
             {
                 if (v is Amulet a)
-                    sw.WriteLine($"AMULET;{a.ItemId};{a.Quality};{a.Design};");
+                    sw.WriteLine($"AMULET;{a.ItemId};{a.Quality};{a.Design}");
                 if (v is Book b)
-                    sw.WriteLine($"BOOK;{b.ItemId};{b.Title};{b.Price};");
+                    sw.WriteLine($"BOOK;{b.ItemId};{b.Title};{b.Price}");
                 if (v is Course c)
-                    sw.WriteLine($"COURSE;{c.Name};{c.DurationInMinutes};{c.GetValue()};");
+                    sw.WriteLine($"COURSE;{c.Name};{c.DurationInMinutes};{c.GetValue()}");
             }
             sw.Close();
         }
@@ -78,11 +78,11 @@ namespace Pr15_Disaheim.Repositories
             foreach (IValuable v in valuables)
             {
                 if (v is Amulet a)
-                    sw.WriteLine($"AMULET;{a.ItemId};{a.Quality};{a.Design};");
+                    sw.WriteLine($"AMULET;{a.ItemId};{a.Quality};{a.Design}");
                 if (v is Book b)
-                    sw.WriteLine($"BOOK;{b.ItemId};{b.Title};{b.Price};");
+                    sw.WriteLine($"BOOK;{b.ItemId};{b.Title};{b.Price}");
                 if (v is Course c)
-                    sw.WriteLine($"COURSE;{c.Name};{c.DurationInMinutes};{c.GetValue()};");
+                    sw.WriteLine($"COURSE;{c.Name};{c.DurationInMinutes};{c.GetValue()}");
             }
             sw.Close();
         }
@@ -90,7 +90,7 @@ namespace Pr15_Disaheim.Repositories
         public void Load()
         {
             StreamReader sr = new StreamReader("ValuableRepository.txt");
-            string[] lines = sr.ReadToEnd().Split('\n');
+            string[] lines = sr.ReadToEnd().Split("\r\n");
 
             if (lines.Length > 0 )
             {
