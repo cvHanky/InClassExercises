@@ -5,8 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WPFInteractiveGUI"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="400" Width="450">
     <Grid>
-
+        <Label x:Name="lblPersonCount"  Content="Person Count 0" HorizontalAlignment="Left" Margin="56,66,0,0" VerticalAlignment="Top"/>
+        <Label x:Name="lblIndex" Content="Index -1" HorizontalAlignment="Center" Margin="0,66,0,0" VerticalAlignment="Top"/>
+        <Label Content="FirstName" HorizontalAlignment="Left" Margin="56,118,0,0" VerticalAlignment="Top"/>
+        <Label Content="LastName" HorizontalAlignment="Left" Margin="56,148,0,0" VerticalAlignment="Top"/>
+        <Label Content="Age" HorizontalAlignment="Left" Margin="56,178,0,0" VerticalAlignment="Top"/>
+        <Label Content="Telephone No" HorizontalAlignment="Left" Margin="56,208,0,0" VerticalAlignment="Top"/>
+        <TextBox x:Name="tbFirstName" HorizontalAlignment="Center" Margin="0,122,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbLastName" HorizontalAlignment="Center" Margin="0,152,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbAge" HorizontalAlignment="Center" Margin="0,182,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbTelephoneNo" HorizontalAlignment="Center" Margin="0,212,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnNewPerson" Content="New Person" HorizontalAlignment="Left" Margin="320,120,0,0" VerticalAlignment="Top" Width="88" Click="btnNewPerson_Click"/>
+        <Button x:Name="btnDeletePerson" Content="Delete Person" HorizontalAlignment="Left" Margin="320,150,0,0" VerticalAlignment="Top" Width="88" Click="btnDeletePerson_Click"/>
+        <Button x:Name="btnUp" Content="Up" HorizontalAlignment="Left" Margin="320,180,0,0" VerticalAlignment="Top" Width="88" Click="btnUp_Click"/>
+        <Button x:Name="btnDown" Content="Down" HorizontalAlignment="Left" Margin="320,210,0,0" VerticalAlignment="Top" Width="88" Click="btnDown_Click"/>
+        <Button x:Name="btnSubmit" Content="Submit" HorizontalAlignment="Center" Margin="0,257,0,0" VerticalAlignment="Top" Click="btnSubmit_Click" Width="54"/>
+        <Label x:Name="lblPersonAdded" Content="Person successfully added" HorizontalAlignment="Center" Margin="0,306,0,0" VerticalAlignment="Top"/>
     </Grid>
 </Window>

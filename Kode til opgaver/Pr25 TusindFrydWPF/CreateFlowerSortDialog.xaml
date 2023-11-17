@@ -1,0 +1,38 @@
+﻿<Window x:Class="Pr25_TusindFrydWPF.CreateFlowerSortDialog"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pr25_TusindFrydWPF"
+        mc:Ignorable="d"
+        Title="CreateFlowerSortDialog" Height="400" Width="400" FontSize="13">
+    <Grid Margin="15">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="4*"/>
+            <ColumnDefinition Width="10*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="100"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="50"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Column="0" Grid.Row="0" VerticalAlignment="Center">Navn:</Label>
+        <Label Grid.Column="0" Grid.Row="1" VerticalAlignment="Center">Billede (sti):</Label>
+        <Label Grid.Column="0" Grid.Row="3" VerticalAlignment="Center">Produktionstid:</Label>
+        <Label Grid.Column="0" Grid.Row="4" VerticalAlignment="Center">Halveringstid:</Label>
+        <Label Grid.Column="0" Grid.Row="5" VerticalAlignment="Center">Størrelse:</Label>
+        <TextBox x:Name="tbName" Grid.Column="1" Grid.Row="0" VerticalAlignment="Center" LostFocus="tbName_LostFocus"></TextBox>
+        <TextBox x:Name="tbBillede" Grid.Column="1" Grid.Row="1" VerticalAlignment="Center" LostFocus="tbBillede_LostFocus"></TextBox>
+        <TextBox x:Name="tbProduktionstid" Grid.Column="1" Grid.Row="3" VerticalAlignment="Center" LostFocus="tbProduktionstid_LostFocus"></TextBox>
+        <TextBox x:Name="tbHalveringstid" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center" LostFocus="tbHalveringstid_LostFocus"></TextBox>
+        <TextBox x:Name="tbStørrelse" Grid.Column="1" Grid.Row="5" VerticalAlignment="Center" LostFocus="tbStørrelse_LostFocus" TextChanged="tbStørrelse_TextChanged"></TextBox>
+        <Image x:Name="imgImage" Grid.Column="1" Grid.Row="2" HorizontalAlignment="Left"/>
+        <Button x:Name="btnOk" Margin="0,0,75,0" FontSize="10" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Right" VerticalAlignment="Center" Width="60" Height="25" IsDefault="True" Click="btnOk_Click">OK</Button>
+        <Button x:Name="btnFortryd" FontSize="10" Grid.Column="1" Grid.Row="6" HorizontalAlignment="Right" VerticalAlignment="Center" Width="60" Height="25" IsCancel="True" Click="btnFortryd_Click">Fortryd</Button>
+    </Grid>
+</Window>
