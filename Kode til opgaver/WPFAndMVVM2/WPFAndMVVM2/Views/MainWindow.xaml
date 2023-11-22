@@ -17,24 +17,34 @@
                 <RowDefinition Height="10*"/>
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
-            <ListBox Grid.Row="0">
+            <ListBox x:Name="lsbPersons" Grid.Row="0" ItemsSource="{Binding PersonsVM, UpdateSourceTrigger=PropertyChanged}" SelectedItem="{Binding SelectedPerson, UpdateSourceTrigger=PropertyChanged}">
                 <ListBox.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
-                            <Label Content="FullName"/>
+                            <TextBlock Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}"/>
+                            <TextBlock Text=" "/>
+                            <TextBlock Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}"/>
                         </StackPanel>
                     </DataTemplate>
                 </ListBox.ItemTemplate>
             </ListBox>
-            <StackPanel Orientation="Horizontal" Grid.Row="1"/>
+            <StackPanel HorizontalAlignment="Center" Orientation="Horizontal" Grid.Row="1">
+                <StackPanel.Resources>
+                    <Style TargetType="Button">
+                        <Setter Property="Margin" Value="20,0,20,0"/>
+                    </Style>
+                </StackPanel.Resources>
+                <Button x:Name="btnNewPerson" Content="New" Click="btnNewPerson_Click"/>
+                <Button x:Name="btnDeletePerson" Content="Delete" Click="btnDeletePerson_Click"/>
+            </StackPanel>
         </Grid>
 
         <GridSplitter Width="5" Grid.Column="1" HorizontalAlignment="Stretch"/>
         <Grid Grid.Column="2">
-            <TextBox Text="First name" Height="20" VerticalAlignment="Top" Margin="170,62,171,0"/>
-            <TextBox Text="Last name" Height="20" Margin="170,109,171,0" VerticalAlignment="Top" />
-            <TextBox Text="Age" Height="20" Margin="170,158,171,0" VerticalAlignment="Top"/>
-            <TextBox Text="Phone" Height="20" Margin="170,204,171,0" VerticalAlignment="Top"/>
+            <TextBox x:Name="tbFirstName" Text="{Binding ElementName=lsbPersons,Path=SelectedItem.FirstName,UpdateSourceTrigger=PropertyChanged}" Height="20" VerticalAlignment="Top" Margin="170,62,171,0"/>
+            <TextBox x:Name="tbLastName" Text="{Binding ElementName=lsbPersons, Path=SelectedItem.LastName, UpdateSourceTrigger=PropertyChanged}" Height="20" Margin="170,109,171,0" VerticalAlignment="Top" />
+            <TextBox Text="{Binding ElementName=lsbPersons, Path=SelectedItem.Age, UpdateSourceTrigger=PropertyChanged}" Height="20" Margin="170,158,171,0" VerticalAlignment="Top"/>
+            <TextBox Text="{Binding ElementName=lsbPersons, Path=SelectedItem.Phone, UpdateSourceTrigger=PropertyChanged}" Height="20" Margin="170,204,171,0" VerticalAlignment="Top"/>
             <Label Content="FirstName:" HorizontalAlignment="Left" Margin="67,59,0,0" VerticalAlignment="Top"/>
             <Label Content="LastName:" HorizontalAlignment="Left" Margin="67,103,0,0" VerticalAlignment="Top" Width="66"/>
             <Label Content="Age:" HorizontalAlignment="Left" Margin="67,152,0,0" VerticalAlignment="Top"/>

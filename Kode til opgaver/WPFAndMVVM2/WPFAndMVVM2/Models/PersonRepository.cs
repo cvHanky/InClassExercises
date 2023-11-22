@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 
 namespace WPFAndMVVM2.Models
@@ -7,7 +8,7 @@ namespace WPFAndMVVM2.Models
     public class PersonRepository
     {
         // persons is the internal datastructure to represent the Person collection of the repository pattern
-        private List<Person> persons = new List<Person>();
+        private ObservableCollection<Person> persons = new ObservableCollection<Person>();
 
         public PersonRepository()
         {
@@ -84,7 +85,7 @@ namespace WPFAndMVVM2.Models
             return result;
         }
 
-        public List<Person> GetAll()
+        public ObservableCollection<Person> GetAll()
         {
             return persons;
         }
