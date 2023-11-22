@@ -1,0 +1,57 @@
+﻿<Window x:Class="Pr28_Tusindfryd_GUI.Views.StartProductionView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Pr28_Tusindfryd_GUI.Views"
+        mc:Ignorable="d"
+        Title="StartProductionView" Height="300" Width="350">
+    <Grid Margin="20">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"/>
+            <ColumnDefinition Width="1*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="1*"/>
+            <RowDefinition Height="0.5*"/>
+            <RowDefinition Height="1*"/>
+        </Grid.RowDefinitions>
+        <Label Grid.Row="1" HorizontalAlignment="Center">Vælg drivhus</Label>
+        <Label Grid.Row="2" HorizontalAlignment="Center">Vælg produktionsbakke</Label>
+        <Label Grid.Row="3" HorizontalAlignment="Center">Vælg startdato</Label>
+        <Label Grid.Row="4" HorizontalAlignment="Center">Vælg blomstersort</Label>
+        <Label Grid.Row="5" HorizontalAlignment="Center">Indtast startantal</Label>
+        <ComboBox x:Name="cboxDrivhus" ItemsSource="{Binding Drivhuse}" Grid.Column="1" Grid.Row="1">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <ComboBox x:Name="cboxProdbakke" ItemsSource="{Binding Produktionsbakker}" Grid.Column="1" Grid.Row="2">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <DatePicker x:Name="dtpDato" Grid.Column="1" Grid.Row="3" IsTodayHighlighted="True">
+            
+        </DatePicker>
+        <ComboBox x:Name="cboxBlomstersort" ItemsSource="{Binding Blomster}" Grid.Column="1" Grid.Row="4">
+            <ComboBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}"/>
+                </DataTemplate>
+            </ComboBox.ItemTemplate>
+        </ComboBox>
+        <TextBox x:Name="tbAntal" Grid.Column="1" Grid.Row="5" VerticalAlignment="Center">0</TextBox>
+        <Button x:Name="btnBekræft" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Center" Click="btnBekræft_Click">Bekræft</Button>
+        <Button x:Name="btnFortryd" Grid.Column="1" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Center" Click="btnFortryd_Click">Fortryd</Button>
+    </Grid>
+</Window>
