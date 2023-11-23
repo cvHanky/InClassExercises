@@ -21,36 +21,36 @@
             <RowDefinition Height="0.5*"/>
             <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <Label Grid.Row="1" HorizontalAlignment="Center">Vælg drivhus</Label>
-        <Label Grid.Row="2" HorizontalAlignment="Center">Vælg produktionsbakke</Label>
-        <Label Grid.Row="3" HorizontalAlignment="Center">Vælg startdato</Label>
-        <Label Grid.Row="4" HorizontalAlignment="Center">Vælg blomstersort</Label>
-        <Label Grid.Row="5" HorizontalAlignment="Center">Indtast startantal</Label>
-        <ComboBox x:Name="cboxDrivhus" ItemsSource="{Binding Drivhuse}" Grid.Column="1" Grid.Row="1">
+        <Label x:Name="lblDrivhus" Grid.Row="0" HorizontalAlignment="Center">Vælg drivhus</Label>
+        <Label Grid.Row="1" HorizontalAlignment="Center">Vælg produktionsbakke</Label>
+        <Label Grid.Row="2" HorizontalAlignment="Center">Vælg startdato</Label>
+        <Label Grid.Row="3" HorizontalAlignment="Center">Vælg blomstersort</Label>
+        <Label Grid.Row="4" HorizontalAlignment="Center">Indtast startantal</Label>
+        <ComboBox x:Name="cboxDrivhus" ItemsSource="{Binding Drivhuse}" Grid.Column="1" Grid.Row="0" Height="{Binding ElementName=btnBekræft, Path=ActualHeight}">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Name}"/>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <ComboBox x:Name="cboxProdbakke" ItemsSource="{Binding Produktionsbakker}" Grid.Column="1" Grid.Row="2">
+        <ComboBox x:Name="cboxProdbakke" ItemsSource="{Binding Produktionsbakker}" Grid.Column="1" Grid.Row="1" Height="{Binding ElementName=btnBekræft, Path=ActualHeight}">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Name}"/>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <DatePicker x:Name="dtpDato" Grid.Column="1" Grid.Row="3" IsTodayHighlighted="True">
+        <DatePicker x:Name="dtpDato" Grid.Column="1" Grid.Row="2" IsTodayHighlighted="True" Height="{Binding ElementName=btnBekræft, Path=Height}">
             
         </DatePicker>
-        <ComboBox x:Name="cboxBlomstersort" ItemsSource="{Binding Blomster}" Grid.Column="1" Grid.Row="4">
+        <ComboBox x:Name="cboxBlomstersort" ItemsSource="{Binding Blomster}" Grid.Column="1" Grid.Row="3" Height="{Binding ElementName=btnBekræft, Path=ActualHeight}">
             <ComboBox.ItemTemplate>
                 <DataTemplate>
                     <TextBlock Text="{Binding Name}"/>
                 </DataTemplate>
             </ComboBox.ItemTemplate>
         </ComboBox>
-        <TextBox x:Name="tbAntal" Grid.Column="1" Grid.Row="5" VerticalAlignment="Center">0</TextBox>
+        <TextBox x:Name="tbAntal" Grid.Column="1" Grid.Row="4" VerticalAlignment="Center">0</TextBox>
         <Button x:Name="btnBekræft" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Center" Click="btnBekræft_Click">Bekræft</Button>
         <Button x:Name="btnFortryd" Grid.Column="1" Grid.Row="7" HorizontalAlignment="Center" VerticalAlignment="Center" Click="btnFortryd_Click">Fortryd</Button>
     </Grid>
