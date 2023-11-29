@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Pr30_WPFCommandbinding.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using WPFAndMVVM2.ViewModels;
 
-namespace WPFAndMVVM2
+namespace Pr30_WPFCommandbinding
 {
     /// <summary>
     /// Interaction logic for MainWindow.xaml

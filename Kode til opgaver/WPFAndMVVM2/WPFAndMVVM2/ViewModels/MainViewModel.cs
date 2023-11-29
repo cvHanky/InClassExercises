@@ -4,6 +4,8 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Diagnostics;
 using System.Text;
+using System.Windows.Input;
+using WPFAndMVVM2.Commands;
 using WPFAndMVVM2.Models;
 
 namespace WPFAndMVVM2.ViewModels
@@ -42,6 +44,8 @@ namespace WPFAndMVVM2.ViewModels
                 OnPropertyChanged("SelectedPerson");
             }
         }
+        public ICommand DltCommand { get; set; } = new DeleteCommand();
+        public ICommand NewCmd { get; set; } = new NewCommand();
 
         public void AddDefaultPerson()
         {

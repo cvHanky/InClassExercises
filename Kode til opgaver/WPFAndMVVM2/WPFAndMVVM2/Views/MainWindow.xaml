@@ -34,8 +34,8 @@
                         <Setter Property="Margin" Value="20,0,20,0"/>
                     </Style>
                 </StackPanel.Resources>
-                <Button x:Name="btnNewPerson" Content="New" Click="btnNewPerson_Click"/>
-                <Button x:Name="btnDeletePerson" Content="Delete" Click="btnDeletePerson_Click"/>
+                <Button x:Name="btnNewPerson" Content="New" Command="{Binding NewCmd}" CommandParameter="{Binding}"/>
+                <Button x:Name="btnDeletePerson" Content="Delete" Command="{Binding DltCommand}" CommandParameter="{Binding}"/>
             </StackPanel>
         </Grid>
 
