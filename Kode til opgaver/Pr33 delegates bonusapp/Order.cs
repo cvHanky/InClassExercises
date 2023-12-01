@@ -27,9 +27,7 @@ namespace Pr33_delegates_bonusapp
         }
         public double GetBonus()
         {
-            double bonus = 0;
-            bonus += Bonus(GetValueOfProducts());
-            return bonus;
+            return Bonus(GetValueOfProducts());
         }
         public double GetTotalPrice()
         {
