@@ -10,16 +10,14 @@ namespace Pr33_Meddelsessystem_med_delegates.Domain
 {
     public class Student : Person,IObserver
     {
-        private Academy academy;
         public string Message { get; set; }
 
-        public Student(Academy academy, string name) : base(name) // this calls the constructor of the "base" class, which is person. 
+        public Student (string name) : base(name) // this calls the constructor of the "base" class, which is person. 
         {
-            this.academy = academy;
         }
-        public void Update()
+        public void Update(object sender, EventArgs e)
         {
-            if (academy is Academy a)
+            if (sender is Academy a)
             {
                 Message = a.Message;
                 Console.WriteLine($"Studerende {Name} modtog nyheden '{Message}' fra akademiet {a.Name}");

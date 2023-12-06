@@ -6,8 +6,9 @@ using System.Threading.Tasks;
 
 namespace Pr33_Meddelsessystem_med_delegates.Interfaces
 {
-    public interface IObserver
+    public interface INotifyMessageChanged
     {
-        public void Update(object sender, EventArgs e);
+        public delegate void EventHandler(object sender, EventArgs e);
+        public event EventHandler MessageChanged;
     }
 }

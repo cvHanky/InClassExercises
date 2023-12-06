@@ -8,18 +8,17 @@ namespace Pr33_Meddelsessystem_med_delegates
         {
             var p = new Academy("UCL", "Seebladsgade");
 
-            var s1 = new Student(p, "Jens");
-            var s2 = new Student(p, "Niels");
-            var s3 = new Student(p, "Susan");
+            var s1 = new Student("Jens");
+            var s2 = new Student("Niels");
+            var s3 = new Student("Susan");
 
-            p.MessageChanged += s1.Update;
-            p.MessageChanged += s2.Update;
-            p.MessageChanged = null;
-            p.MessageChanged += s3.Update;
+            p.PropertyChanged += s1.Update;
+            p.PropertyChanged += s2.Update;
+            p.PropertyChanged += s3.Update;
 
             p.Message = "Så er der julefrokost!";
 
-            p.MessageChanged -= s2.Update;
+            p.PropertyChanged -= s2.Update;
 
             p.Message = "Så er der fredagsbar!";
 

@@ -2,17 +2,20 @@
 using Pr33_Meddelsessystem_med_delegates.Superclasses;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Pr33_Meddelsessystem_med_delegates.Domain
 {
-    public delegate void NotifyHandler();
-    public class Academy : Organization
+    //public delegate void NotifyHandler();
+    public class Academy : Organization, INotifyPropertyChanged
     {
-        public NotifyHandler MessageChanged;
+        //public event NotifyHandler MessageChanged;
         private string message;
+
+        public event PropertyChangedEventHandler? PropertyChanged;
 
         public string Message
         {
@@ -27,7 +30,10 @@ namespace Pr33_Meddelsessystem_med_delegates.Domain
 
         public void OnMessageChanged()
         {
-            MessageChanged.Invoke();
+            if (PropertyChanged != null)
+            {
+                PropertyChanged(this, null);
+            }
         }
     }
 }
