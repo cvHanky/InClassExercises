@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.7.34302.85
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pr34 Metronome bonus", "Pr34 Metronome bonus.csproj", "{0F7EE258-8CC3-4F3C-8254-F4D02ED9FE16}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0F7EE258-8CC3-4F3C-8254-F4D02ED9FE16}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0F7EE258-8CC3-4F3C-8254-F4D02ED9FE16}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0F7EE258-8CC3-4F3C-8254-F4D02ED9FE16}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0F7EE258-8CC3-4F3C-8254-F4D02ED9FE16}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {EED6C1FE-1F6E-4813-91F1-8E45595BBD1E}
+	EndGlobalSection
+EndGlobal
