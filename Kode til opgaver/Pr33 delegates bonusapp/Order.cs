@@ -29,6 +29,11 @@ namespace Pr33_delegates_bonusapp
         {
             return Bonus(GetValueOfProducts());
         }
+        public double GetBonus(Func<double, double> bonusProvider) // GetBonus() overload
+        {
+            return bonusProvider(GetValueOfProducts());
+        }
+
         public double GetTotalPrice()
         {
             double price = 0;
@@ -36,6 +41,14 @@ namespace Pr33_delegates_bonusapp
             price -= GetBonus();
             return price;
         }
+        public double GetTotalPrice(Func<double, double> bonusProvider)                               // GetTotalPrice() overload
+        {
+            double price = 0;
+            price += GetValueOfProducts();
+            price -= GetBonus(bonusProvider);
+            return price;
+        }
+
         #endregion
     }
 }
