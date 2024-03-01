@@ -23,5 +23,6 @@ namespace Pr47_ModelPersistence.Model
             CertificateDate = certificateDate;
             Status = status;
         }
+        public Substitute() { }
     }
 }

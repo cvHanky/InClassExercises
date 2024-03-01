@@ -27,6 +27,8 @@ namespace Pr47_ModelPersistence.Persistence
 
         public void RetrieveAll()
         {
+            subjects.Clear();
+
             using (SqlConnection con = new SqlConnection(ConnectionString))
             {
                 con.Open();
