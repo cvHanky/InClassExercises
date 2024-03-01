@@ -11,6 +11,9 @@ namespace Pr47_ModelPersistence.Model
         public int Id { get; set; }
         public string Name { get; set; }
 
+        public Subject()
+        {
+        }
         public Subject(string name)
         {
             Name = name;

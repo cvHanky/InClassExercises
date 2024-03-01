@@ -12,10 +12,10 @@ namespace Pr47_ModelPersistence.Model
         public string Name { get; set; }
         public string Phone { get; set; }
         public string CPR { get; set; }
-        public DateTime CertificateDate { get; set; }
+        public DateTime? CertificateDate { get; set; }
         public bool Status { get; set; }
 
-        public Substitute(string name, string phone, string cPR, DateTime certificateDate, bool status)
+        public Substitute(string name, string phone, string cPR, DateTime? certificateDate, bool status)
         {
             Name = name;
             Phone = phone;
