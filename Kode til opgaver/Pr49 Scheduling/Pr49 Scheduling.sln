@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pr49 Scheduling", "Pr49 Scheduling.csproj", "{8472CD6D-1DF2-4E83-9950-8D30FD444E41}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pr49 unit test", "..\Pr49 unit test\Pr49 unit test.csproj", "{0E13145B-6508-43E5-B4FC-97DBD8FA9946}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8472CD6D-1DF2-4E83-9950-8D30FD444E41}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8472CD6D-1DF2-4E83-9950-8D30FD444E41}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8472CD6D-1DF2-4E83-9950-8D30FD444E41}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8472CD6D-1DF2-4E83-9950-8D30FD444E41}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0E13145B-6508-43E5-B4FC-97DBD8FA9946}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0E13145B-6508-43E5-B4FC-97DBD8FA9946}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0E13145B-6508-43E5-B4FC-97DBD8FA9946}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0E13145B-6508-43E5-B4FC-97DBD8FA9946}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6C236831-69B2-4160-8F61-D05386A5C0AB}
+	EndGlobalSection
+EndGlobal
