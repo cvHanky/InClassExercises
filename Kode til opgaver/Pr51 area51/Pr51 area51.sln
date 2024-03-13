@@ -5,6 +5,8 @@ VisualStudioVersion = 17.8.34525.116
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pr51 area51", "Pr51 area51.csproj", "{F7246D0E-BDE1-46B8-9D26-1FC05CCC9D96}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pr51 øvelse 5", "..\Pr51 øvelse 5\Pr51 øvelse 5.csproj", "{D9EF122F-CC07-482A-90B6-8B7BD0A05D8B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{F7246D0E-BDE1-46B8-9D26-1FC05CCC9D96}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F7246D0E-BDE1-46B8-9D26-1FC05CCC9D96}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F7246D0E-BDE1-46B8-9D26-1FC05CCC9D96}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D9EF122F-CC07-482A-90B6-8B7BD0A05D8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D9EF122F-CC07-482A-90B6-8B7BD0A05D8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D9EF122F-CC07-482A-90B6-8B7BD0A05D8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D9EF122F-CC07-482A-90B6-8B7BD0A05D8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
