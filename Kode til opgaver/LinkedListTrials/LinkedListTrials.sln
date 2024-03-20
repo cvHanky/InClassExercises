@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.8.34525.116
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pr54 LinkedListConsole", "Pr54 LinkedListConsole\Pr54 LinkedListConsole.csproj", "{CA230D64-03E6-40BE-BF4F-F74D0CF055DF}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{CA230D64-03E6-40BE-BF4F-F74D0CF055DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CA230D64-03E6-40BE-BF4F-F74D0CF055DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CA230D64-03E6-40BE-BF4F-F74D0CF055DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CA230D64-03E6-40BE-BF4F-F74D0CF055DF}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {65C30247-7254-4078-B5E6-C2D88C863E7A}
+	EndGlobalSection
+EndGlobal
