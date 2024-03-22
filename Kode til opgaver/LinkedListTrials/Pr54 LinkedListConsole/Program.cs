@@ -1,4 +1,6 @@
-﻿namespace Pr54_LinkedListConsole
+﻿using ADT;
+
+namespace Pr54_LinkedListConsole
 {
     internal class Program
     {
@@ -58,7 +60,7 @@
 
             // Navigate data structure via Head
             Console.WriteLine("** Navigate Node-structure via Head and write to console **");
-            Console.WriteLine("list.Head.Next.Next.Data: " + list.Head.Next.Next.Data);
+            //Console.WriteLine("list.Head.Next.Next.Data: " + list.head.Next.Next.Data);
             Console.WriteLine();
 
             Console.WriteLine("Trials Done");
