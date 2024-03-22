@@ -10,9 +10,13 @@ namespace ADT
     public interface ILinkedList
     {
         public int Count { get; }
+        public object First { get; }
+        public object Last { get; }
 
         public void InsertAt(int index, object item);
+        public void Insert(object item);
+        public void Append(object item);
         public void DeleteAt(int index);
-        public Object? ItemAt(int index);
+        public object? ItemAt(int index);
     }
 }

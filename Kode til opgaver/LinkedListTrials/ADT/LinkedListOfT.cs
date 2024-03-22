@@ -6,12 +6,12 @@ using System.Threading.Tasks;
 
 namespace ADT
 {
-    public class LinkedList : ILinkedList
+    public class LinkedList<T> : ILinkedList<T>
     {
         #region Node class
         class Node
         {
-            public object Data { get; set; }
+            public T Data { get; set; }
             public Node Next { get; set; }
 
             //public Node(object data) { Data = data; }
@@ -30,15 +30,17 @@ namespace ADT
         {
             get { return _count; }
         }
-        public object First {
-            get { return Count == 0 ? null : ItemAt(0); }
+        public T? First
+        {
+            get { return Count == 0 ? default(T) : ItemAt(0); }
         }
-        public object Last {
-            get { return Count == 0 ? null : ItemAt(Count - 1); } 
+        public T? Last
+        {
+            get { return Count == 0 ? default(T) : ItemAt(Count - 1); }
         }
         #endregion
 
-        public void InsertAt(int index, object o)
+        public void InsertAt(int index, T o)
         {
             if (head == null && index == 0)  // Hvis listen er tom
             {
@@ -84,12 +86,12 @@ namespace ADT
             _count++;
         }
 
-        public void Insert(object o)
+        public void Insert(T o)
         {
             InsertAt(0, o);
         }
 
-        public void Append(object o)
+        public void Append(T o)
         {
             InsertAt(Count, o);
         }
@@ -110,7 +112,7 @@ namespace ADT
             {
                 Node current = head;                   // Vi starter på node 0. 
 
-                for (int i = 0; i < index-1; i++)
+                for (int i = 0; i < index - 1; i++)
                 {
                     current = current.Next;
                 }
@@ -124,7 +126,7 @@ namespace ADT
             _count--;
         }
 
-        public object? ItemAt(int index)
+        public T? ItemAt(int index)
         {
             if (index > _count || index < 0)
             {
@@ -148,7 +150,7 @@ namespace ADT
                 return current.Next.Data;
             }
             else
-                return null;
+                return default(T);
         }
 
         public override string ToString()
