@@ -13,6 +13,7 @@ namespace ADT
         {
             public T Data { get; set; }
             public Node Next { get; set; }
+            public Node Prev { get; set; }
 
             //public Node(object data) { Data = data; }
 
@@ -42,6 +43,11 @@ namespace ADT
 
         public void InsertAt(int index, T o)
         {
+            if (index > _count || index < 0)
+            {
+                throw new IndexOutOfRangeException();
+            }
+
             if (head == null && index == 0)  // Hvis listen er tom
             {
                 head = new Node();
@@ -56,6 +62,7 @@ namespace ADT
                 head.Data = o;
 
                 head.Next = temp;    // Referer nye head til gamle head. 
+                head.Next.Prev = head;  // Referer gamle head til nye head. 
             }
 
             else if (head != null && index != 0)  // Tilføjede et sted midt i listen (eller til slut)
@@ -68,7 +75,7 @@ namespace ADT
                     current = current.Next;
                 }
 
-                if (current.Next != null)         // Gemmer den næste node hvis den eksisterer. 
+                if (current.Next is not null)         // Gemmer den næste node hvis den eksisterer. 
                 {
                     temp = current.Next;
                 }
@@ -76,13 +83,11 @@ namespace ADT
                 current.Next = new Node();
                 current.Next.Data = o;
                 current.Next.Next = temp;         // Linker tilbage til den gamle node. 
-            }
+                current.Next.Prev = current;      // Linker den nye node til den node lige før den. 
 
-            if (index > _count || index < 0)
-            {
-                throw new IndexOutOfRangeException();
+                if (current.Next.Next is not null)
+                    current.Next.Next.Prev = current.Next;      // Linker noden efter den nye node tilbage til den nye node. 
             }
-
             _count++;
         }
 
@@ -105,6 +110,7 @@ namespace ADT
 
             if (head != null && index == 0)
             {
+                head.Next.Prev = null;
                 head = head.Next;
             }
 
@@ -117,12 +123,10 @@ namespace ADT
                     current = current.Next;
                 }
 
-                if (current.Next != null)
-                    current.Next = current.Next.Next;      // Rykker pointeren til noden efter den næste node. 
-                else
-                    current.Next = null;
+                if (current.Next.Next != null)
+                    current.Next.Prev = current;       // Rykker pointere for noden efter index til noden før index. (hvis den ikke er null)
+                current.Next = current.Next.Next;      // Rykker pointeren til noden efter den næste node. 
             }
-
             _count--;
         }
 
@@ -151,6 +155,36 @@ namespace ADT
             }
             else
                 return default(T);
+        }
+
+        public void Swap(int index)
+        {
+            if (index > _count || index < 0)
+                return;
+
+            if (ItemAt(index) == null || ItemAt(index + 1) == null)
+                return;
+
+            Node current = head;
+            Node? temp = null;
+
+            if (index != 0)
+            {
+                for (int i = 0; i < index - 1; i++)
+                {
+                    current = current.Next;
+                }
+                temp = current.Next;
+                DeleteAt(index);
+                InsertAt(index + 1, temp.Data);
+            }
+
+            else if (index == 0)
+            {
+                temp = current;
+                DeleteAt(index);
+                InsertAt(index + 1, temp.Data);
+            }
         }
 
         public override string ToString()

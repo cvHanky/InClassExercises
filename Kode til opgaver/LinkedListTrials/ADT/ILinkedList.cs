@@ -17,6 +17,7 @@ namespace ADT
         public void Insert(object item);
         public void Append(object item);
         public void DeleteAt(int index);
+        public void Swap(int index);
         public object? ItemAt(int index);
     }
 }
