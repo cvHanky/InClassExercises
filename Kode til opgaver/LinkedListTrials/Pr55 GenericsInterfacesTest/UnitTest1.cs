@@ -371,7 +371,156 @@ namespace Pr55_GenericsInterfacesTest
             Assert.AreEqual(1.6180m, listDecimal.ItemAt(3));
         }
 
+        [TestMethod]
+        public void TestGenericIEnumerable()
+        {
+            ADT.LinkedList<ClubMember> list = new ADT.LinkedList<ClubMember>();
+            list.Insert(p3);  // p3
+            list.Insert(p22); // p22,p3
+            list.Insert(p9);  // p9,p22,p3
+            list.Insert(p1);  // p1,p9,p22,p3
+            list.Append(p24); // p1,p9,p22,p3,p24
+            list.Append(p5);  // p1,p9,p22,p3,p24,p5
+            list.Append(p16); // p1,p9,p22,p3,p24,p5,p16
 
+            int i = 0;
+            foreach (ClubMember li in list)
+            {
+                Assert.AreEqual(list.ItemAt(i++), li);
+            }
+            Assert.AreEqual(list.Count, i);
+
+            int j = 0;
+            var e = list.GetEnumerator();
+            e.Reset();
+            while (e.MoveNext())
+            {
+                Assert.AreEqual(list.ItemAt(j++), e.Current);
+            }
+        }
+
+        [TestMethod]
+        public void TestClubMemberCompareTo()
+        {
+            ClubMember cm1, cm2, cm3, cm4;
+            cm1 = new ClubMember();
+            cm2 = new ClubMember();
+            cm3 = new ClubMember();
+            cm4 = new ClubMember();
+            cm1.LastName = "A";
+            cm2.LastName = "B";
+            cm3.LastName = "C";
+            cm4.LastName = "C";
+
+            Assert.IsTrue(cm1.CompareTo(cm2) < 0);
+            Assert.IsTrue(cm3.CompareTo(cm2) > 0);
+            Assert.IsTrue(cm2.CompareTo(cm3) < 0);
+            Assert.AreEqual(cm3.CompareTo(cm4), 0);
+        }
+
+        [TestMethod]
+        public void TestBubbleSort()
+        {
+            ADT.LinkedList<ClubMember> list = new ADT.LinkedList<ClubMember>();
+            list.Append(p4);
+            list.Append(p9);
+            list.Append(p5);
+            list.Append(p19);
+            list.Append(p23);
+            list.Append(p2); // p4,p9,p5,p19,p23,p2
+            Assert.AreEqual(p4, list.First);
+            Assert.AreEqual(p2, list.Last);
+            Assert.AreEqual(6, list.Count);
+
+            list.Sort(); // Default sort on FullName
+            Assert.AreEqual(p5, list.ItemAt(0));
+            Assert.AreEqual(p19, list.ItemAt(1));
+            Assert.AreEqual(p9, list.ItemAt(2));
+            Assert.AreEqual(p4, list.ItemAt(3));
+            Assert.AreEqual(p2, list.ItemAt(4));
+            Assert.AreEqual(p23, list.ItemAt(5));
+        }
+
+        [TestMethod]
+        public void TestGenericDividedElementTypesWithSort()
+        {
+            // ** int list test *********
+            ADT.LinkedList<int> listInt = new ADT.LinkedList<int>();
+
+            // Test for empty int list
+            Assert.AreEqual(default(int), listInt.First);
+            Assert.AreEqual(default(int), listInt.Last);
+            Assert.AreEqual(0, listInt.Count);
+
+            // Insert ints and test
+            listInt.Append(105);
+            listInt.Append(45);
+            listInt.Append(11);
+            listInt.Append(3);
+
+            Assert.AreEqual(105, listInt.First);
+            Assert.AreEqual(3, listInt.Last);
+            Assert.AreEqual(4, listInt.Count);
+            Assert.AreEqual(105, listInt.ItemAt(0));
+            Assert.AreEqual(45, listInt.ItemAt(1));
+            Assert.AreEqual(11, listInt.ItemAt(2));
+            Assert.AreEqual(3, listInt.ItemAt(3));
+
+            // Sort int list and test
+            listInt.Sort();
+            Assert.AreEqual(3, listInt.ItemAt(0));
+            Assert.AreEqual(11, listInt.ItemAt(1));
+            Assert.AreEqual(45, listInt.ItemAt(2));
+            Assert.AreEqual(105, listInt.ItemAt(3));
+
+            // ** string list test **********
+            ADT.LinkedList<string> listString = new ADT.LinkedList<string>();
+
+            // Insert strings and test
+            listString.Append("Hello World!");
+            listString.Append("This is a ");
+            listString.Append("test of ");
+            listString.Append("LinkedList<string>");
+
+            Assert.AreEqual("Hello World!", listString.First);
+            Assert.AreEqual("LinkedList<string>", listString.Last);
+            Assert.AreEqual(4, listString.Count);
+            Assert.AreEqual("Hello World!", listString.ItemAt(0));
+            Assert.AreEqual("This is a ", listString.ItemAt(1));
+            Assert.AreEqual("test of ", listString.ItemAt(2));
+            Assert.AreEqual("LinkedList<string>", listString.ItemAt(3));
+
+            // Sort string list and test
+            listString.Sort();
+            Assert.AreEqual("Hello World!", listString.ItemAt(0));
+            Assert.AreEqual("LinkedList<string>", listString.ItemAt(1));
+            Assert.AreEqual("test of ", listString.ItemAt(2));
+            Assert.AreEqual("This is a ", listString.ItemAt(3));
+
+            // ** decimal list test ***********
+            ADT.LinkedList<decimal> listDecimal = new ADT.LinkedList<decimal>();
+
+            // Insert decimals and test
+            listDecimal.Append(3.1415m); // Pi
+            listDecimal.Append(1.4142m); // square root of 2
+            listDecimal.Append(2.7182m); // e (Euler)
+            listDecimal.Append(1.6180m); // Golden ratio
+
+            Assert.AreEqual(3.1415m, listDecimal.First);
+            Assert.AreEqual(1.6180m, listDecimal.Last);
+            Assert.AreEqual(4, listDecimal.Count);
+            Assert.AreEqual(3.1415m, listDecimal.ItemAt(0));
+            Assert.AreEqual(1.4142m, listDecimal.ItemAt(1));
+            Assert.AreEqual(2.7182m, listDecimal.ItemAt(2));
+            Assert.AreEqual(1.6180m, listDecimal.ItemAt(3));
+
+            // Sort decimal list and test
+            listDecimal.Sort();
+            Assert.AreEqual(1.4142m, listDecimal.ItemAt(0));
+            Assert.AreEqual(1.6180m, listDecimal.ItemAt(1));
+            Assert.AreEqual(2.7182m, listDecimal.ItemAt(2));
+            Assert.AreEqual(3.1415m, listDecimal.ItemAt(3));
+        }
 
     }
 

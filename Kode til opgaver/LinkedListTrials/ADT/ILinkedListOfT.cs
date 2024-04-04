@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace ADT
 {
-    public interface ILinkedList<T>
+    public interface ILinkedList<T> : IEnumerable<T>
     {
         public int Count { get; }
         public T First { get; }
@@ -17,5 +17,6 @@ namespace ADT
         public void DeleteAt(int index);
         public T ItemAt(int index);
         public void Swap(int index);
+        public void Sort();
     }
 }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,67 @@ namespace ADT
 {
     public class LinkedList<T> : ILinkedList<T>
     {
+        #region Enumerator class
+        class LinkedListEnumerator : IEnumerator<T>
+        {
+            private Node _head;
+            private Node _current;
+            private bool isReset;
+
+            public T Current
+            {
+                get { return _current.Data; }
+            }
+
+            object IEnumerator.Current
+            {
+                get { return Current; }
+            }
+
+            public LinkedListEnumerator(Node head)
+            {
+                _head = head;
+                isReset = true;
+            }
+
+            public bool MoveNext()
+            {
+                if (_current == null && isReset)
+                {
+                    _current = _head;
+                    isReset = false;
+                    if (_current == null)
+                        return false;
+                    else
+                        return true;
+                }
+                if (_current != null)
+                {
+                    _current = _current.Next;
+                    if (_current == null)
+                        return false;
+                    else
+                        return true;
+                }
+                else
+                {
+                    return false;
+                }
+            }
+
+            public void Reset()
+            {
+                _current = null;
+                isReset = true;
+            }
+
+            public void Dispose()
+            {
+
+            }
+        }
+        #endregion
+
         #region Node class
         class Node
         {
@@ -124,7 +186,7 @@ namespace ADT
                 }
 
                 if (current.Next.Next != null)
-                    current.Next.Prev = current;       // Rykker pointere for noden efter index til noden før index. (hvis den ikke er null)
+                    current.Next.Next.Prev = current;       // Rykker pointere for noden efter index til noden før index. (hvis den ikke er null)
                 current.Next = current.Next.Next;      // Rykker pointeren til noden efter den næste node. 
             }
             _count--;
@@ -204,6 +266,61 @@ namespace ADT
                 toBeWritten += current.ToString();
             }
             return toBeWritten;
+        }
+
+        public IEnumerator<T> GetEnumerator()
+        {
+            return new LinkedListEnumerator(head);
+        }
+
+        IEnumerator IEnumerable.GetEnumerator()
+        {
+            return GetEnumerator();
+        }
+
+        public void Sort()
+        {
+            if (head == null || Count < 1)
+            {
+                return;
+            }
+
+            // Vi starter ved head.
+            if (head != null && Count > 1)
+            {
+                for (int k = 0; k < Count - 1; k++)              // We loop through the list as many times as there are items in the list.
+                {                                                // A 5 long list will be looped through 5 times. 
+                    Node current = head;
+                    for (int i = 0; i < Count - 1; i++)
+                    {
+                        current = head;    // Have to navigate to correct node at the start of this loop as well. 
+                        for (int g = 0; g < i; g++)
+                        {
+                            current = current.Next;
+                        }
+
+                        for (int j = i; j < Count - 1; j++)
+                        {
+                            IComparable<T> Ccurrent = current.Data as IComparable<T>;    // Casting the data to the IComparable interface
+                            if (Ccurrent.CompareTo(current.Next.Data) > 0)               // so our CompareTo() method works. 
+                            {
+                                Swap(j);
+                                                        // After the swap, current now points to old data. Gotta renew the pointer. 
+                                current = head.Next;
+                                if (j != 0)
+                                {
+                                    for (int l = 1; l < j + 1; l++)  // We start at the head. Then navigate to the spot after where we left off. 
+                                    {
+                                        current = current.Next;
+                                    }
+                                }
+                            }
+                            else      // If we don't swap, we simply leave the for loop. 
+                                break;
+                        }
+                    }
+                }
+            }
         }
     }
 }
