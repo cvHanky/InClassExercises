@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Pr54_LinkedListConsole
+namespace LinkedListWPF.Models
 {
     public enum Gender { Male, Female };
     public class ClubMember : IComparable<ClubMember>
