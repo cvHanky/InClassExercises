@@ -5,18 +5,19 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using ADT;
 
 namespace LinkedListWPF.ViewModels
 {
     public class MainViewModel
     {
-        public ObservableCollection<ClubMember> ClubMembers { get; set; } = new ObservableCollection<ClubMember>();
+        public ADT.LinkedList<ClubMember> ClubMembers { get; set; } = new ADT.LinkedList<ClubMember>();
         public ClubMember SelectedItem { get; set; }
         public int SelectedIndex { get; set; }
 
         public MainViewModel()
         {
-            ClubMembers.Add(
+            ClubMembers.Insert(
                 new ClubMember
                 {
                     Id = 1,
@@ -25,7 +26,7 @@ namespace LinkedListWPF.ViewModels
                     Gender = Gender.Female,
                     Age = 18
                 });
-            ClubMembers.Add(
+            ClubMembers.Insert(
                 new ClubMember
                 {
                     Id = 2,
@@ -34,7 +35,7 @@ namespace LinkedListWPF.ViewModels
                     Gender = Gender.Male,
                     Age = 30
                 });
-            ClubMembers.Add(
+            ClubMembers.Insert(
                 new ClubMember
                 {
                     Id = 3,
@@ -43,7 +44,7 @@ namespace LinkedListWPF.ViewModels
                     Gender = Gender.Male,
                     Age = 15
                 });
-            ClubMembers.Add(
+            ClubMembers.Insert(
                 new ClubMember
                 {
                     Id = 4,
@@ -52,7 +53,7 @@ namespace LinkedListWPF.ViewModels
                     Gender = Gender.Male,
                     Age = 20
                 });
-            ClubMembers.Add(
+            ClubMembers.Insert(
                 new ClubMember
                 {
                     Id = 5,
